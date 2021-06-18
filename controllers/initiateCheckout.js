@@ -39,8 +39,7 @@ const initiateCheckout = async (req, res) => {
             content_type
           }
         }
-      ],
-      "test_event_code": "TEST24980"
+      ]
     }
 
     const postReq = await axios.post(`https://graph.facebook.com/v10.0/${process.env.FACEBOOK_PIXEL_ID}/events?access_token=${process.env.FACEBOOK_ACCESS_TOKEN}`, data)
