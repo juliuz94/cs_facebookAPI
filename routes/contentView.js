@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const contentView = require('../controllers/contentView')
 
-router.get('/', (req, res) => {
-  console.log('hi')
-  res.status(200).send({data: 'todo good'})
-})
+router.post('/', contentView)
 
 module.exports = router

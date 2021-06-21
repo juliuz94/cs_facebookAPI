@@ -11,6 +11,7 @@ const purchaseRouter = require('./routes/purchase')
 const contentViewRouter = require('./routes/contentView')
 const initiateCheckoutRouter = require('./routes/initiateCheckout')
 const leadRouter = require('./routes/lead')
+const subscriptionRouter = require('./routes/subscription')
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -34,6 +35,7 @@ app.use('/purchase', purchaseRouter)
 app.use('/lead', leadRouter)
 app.use('/initiateCheckout', initiateCheckoutRouter)
 app.use('/contentView', contentViewRouter)
+app.use('/subscription', subscriptionRouter)
 
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);

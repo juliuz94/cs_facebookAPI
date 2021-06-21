@@ -45,7 +45,6 @@ const newPurchase = async (req, res) => {
   try {
 
     const postReq = await axios.post( `https://graph.facebook.com/v10.0/${process.env.FACEBOOK_PIXEL_ID}/events?access_token=${process.env.FACEBOOK_ACCESS_TOKEN}`, data )
-    console.log(postReq.data)
     res.status(201).end()
 
   } catch (error) {
