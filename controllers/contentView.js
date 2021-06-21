@@ -9,6 +9,8 @@ const contentView = async (req, res) => {
   const clientUserAgent = headers['user-agent']
   const eventSourceUrl = headers['origin']
   const { eventID, eventURL, content_type, content_ids } = body
+
+  console.log(eventID)
   
   try {
     const data = {

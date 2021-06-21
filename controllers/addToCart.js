@@ -9,10 +9,11 @@ const addToCart = async (req, res) => {
   const clientUserAgent = headers['user-agent']
   const eventSourceUrl = headers['origin']
 
-  const { locationUrl, eventId, value, content_type, content_ids } = body
+  const { locationUrl, eventID, value, content_type, content_ids } = body
+
+  console.log(eventID)
 
   try {
-
     const data = {
       "data": [
         {
@@ -20,7 +21,7 @@ const addToCart = async (req, res) => {
           "event_time": getTimeStamp(),
           "action_source": "website",
           "event_source_url": eventSourceUrl,
-          "event_id": eventId,
+          "event_id": eventID,
           "user_data": {
             "client_ip_address": clientIP,
             "client_user_agent": clientUserAgent
