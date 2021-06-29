@@ -8,7 +8,7 @@ const initiateCheckout = async (req, res) => {
   const clientIP = headers['x-forwarded-for']
   const clientUserAgent = headers['user-agent']
   const eventSourceUrl = headers['origin']
-  const { currency, value, content_type, eventId, eventUrl, first_name, last_name, billing_company, billing_phone, billing_email } = body
+  const { currency, value, content_type, eventID, eventUrl, first_name, last_name, billing_company, billing_phone, billing_email } = body
 
   let firstName = first_name === '' ? billing_company : first_name
 
@@ -24,7 +24,7 @@ const initiateCheckout = async (req, res) => {
           "event_time": getTimeStamp(),
           "action_source": "website",
           "event_source_url": eventUrl,
-          "event_id": eventId,
+          "event_id": eventID,
           "user_data": {
             "client_ip_address": clientIP,
             "client_user_agent": clientUserAgent,
@@ -39,8 +39,7 @@ const initiateCheckout = async (req, res) => {
             content_type
           }
         }
-      ],
-      "test_event_code": "TEST83571"
+      ]
     }
 
     const postReq = await axios.post(`https://graph.facebook.com/v10.0/${process.env.FACEBOOK_PIXEL_ID}/events?access_token=${process.env.FACEBOOK_ACCESS_TOKEN}`, data)

@@ -30,8 +30,7 @@ const contentView = async (req, res) => {
             "content_ids": content_ids
           }
         }
-      ],
-      "test_event_code": "TEST83571"
+      ]
     }
     
     const postReq = await axios.post( `https://graph.facebook.com/v10.0/${process.env.FACEBOOK_PIXEL_ID}/events?access_token=${process.env.FACEBOOK_ACCESS_TOKEN}`, data)

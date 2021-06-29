@@ -43,8 +43,7 @@ const newSubscription = async (req, res) => {
             "content": line_items
           }
         }
-      ],
-      "test_event_code": "TEST83571"
+      ]
     }
 
     if (productNames.some(r => subscriptionProducts.indexOf(r) >= 0)) {
