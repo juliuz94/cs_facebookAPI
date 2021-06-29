@@ -39,7 +39,8 @@ const newPurchase = async (req, res) => {
           "content": line_items
         }
       }
-    ]
+    ],
+    "test_event_code": "TEST83571"
   }
 
   try {
