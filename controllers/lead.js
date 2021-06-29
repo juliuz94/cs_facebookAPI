@@ -19,9 +19,8 @@ const lead = async (req, res) => {
           "event_name": "Lead",
           "event_time": getTimeStamp(),
           "action_source": "website",
-          "event_source_url": eventURL,
+          "event_source_url": eventSourceUrl,
           "event_id": eventID,
-          "external_id": external_id,
           "user_data": {
             "client_ip_address": clientIP,
             "client_user_agent": clientUserAgent
