@@ -34,6 +34,7 @@ const contentView = async (req, res) => {
     }
     
     const postReq = await axios.post( `https://graph.facebook.com/v10.0/${process.env.FACEBOOK_PIXEL_ID}/events?access_token=${process.env.FACEBOOK_ACCESS_TOKEN}`, data)
+    console.log('content view event response => ', postReq)
     
     res.status(201).end()
 
